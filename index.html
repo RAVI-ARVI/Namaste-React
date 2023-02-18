@@ -7,6 +7,34 @@
     <title>Namasthey</title>
   </head>
   <body>
-    hello
+    <h4>this is way to create tag with html</h4>
+    <div id="js"></div>
+    <div id="root">page not render</div>
+    <!--injecting react and reactDom  using cdn-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script>
+      const reactText = React.createElement("h3", {}, "this is the react test");
+      const reactOthertext = React.createElement("h3", {}, "this anthor text");
+      const MultipulText = React.createElement("div", {}, [
+        reactText,
+        reactOthertext,
+      ]);
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(MultipulText);
+    </script>
+    <script>
+      const text = document.createElement("h4");
+      text.innerHTML = "this way to create the text with the javascript";
+      const show = document.getElementById("js");
+      show.appendChild(text);
+    </script>
   </body>
 </html>
